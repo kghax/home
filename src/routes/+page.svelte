@@ -18,6 +18,13 @@
 					network: 'public'
 				},
 				{
+					name: 'Minio',
+					description:
+						'This is a demo of the Tailwind CSS Typography plugin in action. The plugin provides a set of prose classes that can be used to style your HTML content with minimal effort. When combined with daisyUI, you get access to a variety of themes that are fully compatible with the Typography plugin.',
+					url: 'https://minio.kgstack.net/',
+					network: 'public'
+				},
+				{
 					name: 'OpenHands',
 					description: 'セルフホストしているAIエージェント',
 					url: 'http://kgsvr-um560:3000/',
@@ -43,7 +50,7 @@
 			]
 		},
 		{
-			name: 'インフラ',
+			name: '家',
 			links: [
 				{
 					name: 'Router',
@@ -90,10 +97,11 @@
 
 {#each linkGroups as linkGroup}
 	<div class="links-container">
-		<h2 class="text-2xl py-4 bg-neutral-">{linkGroup.name}</h2>
-		<div class="flex flex-wrap gap-4">
+		<h2 class="text-2xl py-4">{linkGroup.name}</h2>
+		<!-- <div class="divider divider-neutral my-2"></div> -->
+		<div class="links">
 			{#each linkGroup.links as link}
-				<div class="card bg-base-100 w-96 shadow-sm">
+				<div class="card card-border bg-base-300 w-96">
 					<div class="card-body">
 						<h2 class="card-title">{link.name}</h2>
 						<p class="whitespace-pre-wrap">{link.description}</p>
@@ -127,14 +135,16 @@
 	}
 
 	.links-container {
-		/* display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center; */
-		padding: 1rem;
+		padding: 1rem 1rem;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 95%;
-		/* padding: 4rem 2rem; */
+		max-width: 1220px;
+	}
+
+	.links {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 384px);
+		/* justify-content: space-evenly; */
+		gap: 16px 16px;
 	}
 </style>
