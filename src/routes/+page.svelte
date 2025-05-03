@@ -12,15 +12,7 @@
 				},
 				{
 					name: 'Minio',
-					description:
-						'This is a demo of the Tailwind CSS Typography plugin in action. The plugin provides a set of prose classes that can be used to style your HTML content with minimal effort. When combined with daisyUI, you get access to a variety of themes that are fully compatible with the Typography plugin.',
-					url: 'https://minio.kgstack.net/',
-					network: 'public'
-				},
-				{
-					name: 'Minio',
-					description:
-						'This is a demo of the Tailwind CSS Typography plugin in action. The plugin provides a set of prose classes that can be used to style your HTML content with minimal effort. When combined with daisyUI, you get access to a variety of themes that are fully compatible with the Typography plugin.',
+					description: 'セルフホストしているオブジェクトストレージの管理画面',
 					url: 'https://minio.kgstack.net/',
 					network: 'public'
 				},
@@ -50,6 +42,29 @@
 			]
 		},
 		{
+			name: 'Sango',
+			links: [
+				{
+					name: 'Sango',
+					description: 'Sango Web',
+					url: 'https://sango.blue',
+					network: 'public'
+				},
+				{
+					name: 'SwimTimes',
+					description: '記録や分析を掲載している',
+					url: 'https://m.swimtimes.nl/en/',
+					network: 'public'
+				},
+				{
+					name: 'USA Swimming',
+					description: 'アメリカ国内の競技結果を掲載している',
+					url: 'https://data.usaswimming.org/datahub/usas/individualsearch',
+					network: 'public'
+				}
+			]
+		},
+		{
 			name: '家',
 			links: [
 				{
@@ -63,6 +78,11 @@
 					description: 'tp-link無線の管理画面',
 					url: 'http://192.168.1.2/',
 					network: 'local'
+				},
+				{
+					name: 'Tailscale',
+					description: 'Tailscaleの管理画面',
+					url: 'https://login.tailscale.com/admin/machines'
 				}
 			]
 		}
