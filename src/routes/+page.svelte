@@ -90,8 +90,8 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>KG Stack Home</title>
+	<meta name="description" content="KG Stack Home" />
 </svelte:head>
 
 <div id="hero" style="background-image: url(/bg-01.jpg);">
