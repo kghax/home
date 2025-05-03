@@ -1,31 +1,6 @@
 <script lang="ts">
 	const linkGroups = [
 		{
-			name: 'KG Stack K8S',
-			links: [
-				{
-					name: 'Dashboard',
-					description:
-						'Kubernetesのダッシュボードです。\nKubernetesのリソースを可視化し、管理するためのWebベースのインターフェースです。',
-					url: 'https://dashboard.kgstack.net/',
-					network: 'public'
-				},
-				{
-					name: 'Minio',
-					description:
-						'This is a demo of the Tailwind CSS Typography plugin in action. The plugin provides a set of prose classes that can be used to style your HTML content with minimal effort. When combined with daisyUI, you get access to a variety of themes that are fully compatible with the Typography plugin.',
-					url: 'https://minio.kgstack.net/',
-					network: 'public'
-				},
-				{
-					name: 'OpenHands',
-					description: 'セルフホストしているAIエージェント',
-					url: 'http://kgsvr-um560:3000/',
-					network: 'vpn'
-				}
-			]
-		},
-		{
 			name: 'LLM',
 			links: [
 				{
@@ -39,23 +14,6 @@
 					description: 'GeminiのAPIキー管理',
 					url: 'https://aistudio.google.com/u/0/apikey?pli=1',
 					network: 'public'
-				}
-			]
-		},
-		{
-			name: 'インフラ',
-			links: [
-				{
-					name: 'Router',
-					description: 'OpenWrtの管理画面',
-					url: 'http://192.168.1.1/',
-					network: 'local'
-				},
-				{
-					name: 'Wifiアクセスポイント',
-					description: 'tp-link無線の管理画面',
-					url: 'http://192.168.1.2/',
-					network: 'local'
 				}
 			]
 		}
