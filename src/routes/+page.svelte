@@ -1,7 +1,65 @@
 <script lang="ts">
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcomeFallback from '$lib/images/svelte-welcome.png';
+	const linkGroups = [
+		{
+			name: 'KG Stack K8S',
+			links: [
+				{
+					name: 'Dashboard',
+					description:
+						'Kubernetesのダッシュボードです。\nKubernetesのリソースを可視化し、管理するためのWebベースのインターフェースです。',
+					url: 'https://dashboard.kgstack.net/',
+					network: 'public'
+				},
+				{
+					name: 'Minio',
+					description:
+						'This is a demo of the Tailwind CSS Typography plugin in action. The plugin provides a set of prose classes that can be used to style your HTML content with minimal effort. When combined with daisyUI, you get access to a variety of themes that are fully compatible with the Typography plugin.',
+					url: 'https://minio.kgstack.net/',
+					network: 'public'
+				},
+				{
+					name: 'OpenHands',
+					description: 'セルフホストしているAIエージェント',
+					url: 'http://kgsvr-um560:3000/',
+					network: 'vpn'
+				}
+			]
+		},
+		{
+			name: 'LLM',
+			links: [
+				{
+					name: 'Gemini',
+					description: 'Geminiのチャット画面',
+					url: 'https://gemini.google.com/app?hl=ja',
+					network: 'public'
+				},
+				{
+					name: 'Google AI Studio',
+					description: 'GeminiのAPIキー管理',
+					url: 'https://aistudio.google.com/u/0/apikey?pli=1',
+					network: 'public'
+				}
+			]
+		},
+		{
+			name: 'インフラ',
+			links: [
+				{
+					name: 'Router',
+					description: 'OpenWrtの管理画面',
+					url: 'http://192.168.1.1/',
+					network: 'local'
+				},
+				{
+					name: 'Wifiアクセスポイント',
+					description: 'tp-link無線の管理画面',
+					url: 'http://192.168.1.2/',
+					network: 'local'
+				}
+			]
+		}
+	];
 </script>
 
 <svelte:head>
@@ -9,51 +67,74 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcomeFallback} alt="Welcome" />
-			</picture>
-		</span>
+<div id="hero" style="background-image: url(/bg-01.jpg);">
+	<form action="https://www.google.co.jp/search" method="get">
+		<input type="hidden" name="hl" value="ja" />
+		<label class="input input-lg w-full md:w-xl">
+			<svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<g
+					stroke-linejoin="round"
+					stroke-linecap="round"
+					stroke-width="2.5"
+					fill="none"
+					stroke="currentColor"
+				>
+					<circle cx="11" cy="11" r="8"></circle>
+					<path d="m21 21-4.3-4.3"></path>
+				</g>
+			</svg>
+			<input type="search" name="q" maxLength="255" required placeholder="Search" />
+		</label>
+	</form>
+</div>
 
-		to your new<br />SvelteKit app
-	</h1>
+{#each linkGroups as linkGroup}
+	<div class="links-container">
+		<h2 class="text-2xl py-4 bg-neutral-">{linkGroup.name}</h2>
+		<div class="flex flex-wrap gap-4">
+			{#each linkGroup.links as link}
+				<div class="card bg-base-100 w-96 shadow-sm">
+					<div class="card-body">
+						<h2 class="card-title">{link.name}</h2>
+						<p class="whitespace-pre-wrap">{link.description}</p>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
+						<div class="card-actions justify-between">
+							<div>
+								{#if link.network === 'vpn'}
+									<div class="badge badge-accent">VPN</div>
+								{:else if link.network === 'local'}
+									<div class="badge badge-secondary">Local</div>
+								{/if}
+							</div>
+							<a href={link.url} target="_blank" class="btn btn-primary">Go</a>
+						</div>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+{/each}
 
 <style>
-	section {
-		display: flex;
+	#hero {
+		background-size: cover;
+		background-position: center;
+		padding: 10rem 4rem;
+		@media screen and (max-width: 640px) {
+			padding: 5rem 1rem;
+		}
+		text-align: center;
+	}
+
+	.links-container {
+		/* display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+		align-items: center; */
+		padding: 1rem;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 95%;
+		/* padding: 4rem 2rem; */
 	}
 </style>
