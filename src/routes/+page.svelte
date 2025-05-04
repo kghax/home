@@ -28,6 +28,12 @@
 			name: 'LLM',
 			links: [
 				{
+					name: 'Artificial Analysis',
+					description: 'LLMの各種スコアの比較サイト',
+					url: 'https://artificialanalysis.ai/models',
+					network: 'public'
+				},
+				{
 					name: 'Gemini',
 					description: 'Geminiのチャット画面',
 					url: 'https://gemini.google.com/app?hl=ja',
